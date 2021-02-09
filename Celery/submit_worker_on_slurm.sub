@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+#SBATCH -J celery-worker
+#SBATCH -n 1
+#SBATCH -p quick
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=1G
+#SBATCH -t 00:30:00
+
+celery -A tasks worker --loglevel=info
