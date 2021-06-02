@@ -11,6 +11,7 @@ import socket
 import awkward as ak
 import os
 from time import time
+from datetime import timedelta
 
 import uproot
 
@@ -71,7 +72,7 @@ def main(args):
 
     print("Done concatenating")
     print(final_arr.type)
-    print("Computation took {} seconds".format(int(end - start)))
+    print("Computation time: {}".format(str(timedelta(seconds=int(end - start)))))
 
 
 if __name__ == "__main__":
